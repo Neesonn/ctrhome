@@ -2,22 +2,23 @@
 
 import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
   {
-    image: 'hero/nora-7-seater.png',
-    title: 'Nora 7 seat',
+    image: 'hero/kensington-5-seater.png',
+    title: 'Kensington 5 Seater',
     subtitle: 'Corner modular. Available in premium fabrics and colours.',
   },
   {
-    image: 'hero/hero2.jpg',
-    title: 'Los Angeles Sofa',
-    subtitle: 'Modern and plush — now available in new textures.',
+    image: 'hero/trestle-dining-table.png',
+    title: 'Trestle Dining Table',
+    subtitle: 'Gather in Style with Heritage-Inspired Design.',
   },
   {
-    image: 'hero/hero3.jpg',
-    title: 'Capello Dining',
-    subtitle: 'Marble elegance for your dining room.',
+    image: 'hero/sycamore-lounge-4piece.png',
+    title: 'Sycamore Lounge 4 Piece',
+    subtitle: 'Relaxed luxury with natural timber tones and coastal-inspired comfort..',
   },
 ];
 
@@ -35,6 +36,7 @@ export default function HeroSlider() {
 
   return (
     <Box position="relative" w="full" h={{ base: '300px', md: '500px' }} overflow="hidden">
+      {/* Removed left and right arrows */}
       <Image
         src={slide.image}
         alt={slide.title}
@@ -43,6 +45,31 @@ export default function HeroSlider() {
         h="full"
         transition="all 0.5s ease-in-out"
       />
+      {/* Navigation Dots */}
+      <Box
+        position="absolute"
+        bottom={4}
+        left="50%"
+        transform="translateX(-50%)"
+        display="flex"
+        gap={2}
+        zIndex={2}
+      >
+        {slides.map((_, idx) => (
+          <Box
+            key={idx}
+            as="button"
+            w={3}
+            h={3}
+            borderRadius="full"
+            bg={idx === current ? 'gray.800' : 'gray.300'}
+            border={idx === current ? '2px solid white' : 'none'}
+            transition="background 0.2s, border 0.2s"
+            onClick={() => setCurrent(idx)}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </Box>
       <VStack
         position="absolute"
         bottom={8}
