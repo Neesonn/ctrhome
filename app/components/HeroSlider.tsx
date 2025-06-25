@@ -48,7 +48,8 @@ export default function HeroSlider() {
       {/* Navigation Dots */}
       <Box
         position="absolute"
-        bottom={4}
+        bottom={{ base: 'auto', md: 4 }}
+        top={{ base: 2, md: 'auto' }}
         left="50%"
         transform="translateX(-50%)"
         display="flex"
@@ -72,16 +73,16 @@ export default function HeroSlider() {
       </Box>
       <VStack
         position="absolute"
-        bottom={8}
-        left={8}
+        bottom={{ base: 2, md: 8 }}
+        left={{ base: 2, md: 8 }}
         bg="whiteAlpha.800"
-        p={4}
+        p={{ base: 2, md: 4 }}
         borderRadius="md"
         align="flex-start"
         gap={2}
       >
-        <Text fontWeight="bold" fontSize="lg">{slide.title}</Text>
-        <Text fontSize="sm">{slide.subtitle}</Text>
+        <Text fontWeight="bold" fontSize={{ base: 'md', md: 'lg' }}>{slide.title}</Text>
+        <Text fontSize={{ base: 'xs', md: 'sm' }}>{slide.subtitle}</Text>
       </VStack>
     </Box>
   );

@@ -156,7 +156,7 @@ export default function HomePage() {
     <Box bg="gray.50" minH="100vh">
       {/* Top Nav */}
       <Flex justify="space-between" align="center" px={{ base: 4, md: 8 }} py={4} bg="white" boxShadow="sm">
-        <Image src="/ctr-home-logo.png" alt="CTR Home Logo" h={{ base: '36px', md: '50px' }} />
+        <Image src="/ctr-home-logo.png" alt="CTR Home Logo" h={{ base: '28px', md: '50px' }} />
         {/* Hamburger for mobile */}
         <IconButton
           ref={btnRef}
@@ -166,6 +166,7 @@ export default function HomePage() {
           onClick={onOpen}
           variant="ghost"
           as="button"
+          zIndex={10}
         />
         <HStack gap={6} ml={8} display={{ base: 'none', md: 'flex' }}>
           {/* Sofas & Armchairs with dropdown */}

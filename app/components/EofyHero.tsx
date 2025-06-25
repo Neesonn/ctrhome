@@ -24,16 +24,16 @@ export default function EofyHero() {
       <Box
         position="absolute"
         top="50%"
-        left={8}
+        left={{ base: 2, md: 8 }}
         transform="translateY(-50%)"
         bg="whiteAlpha.400"
-        p={6}
+        p={{ base: 3, md: 6 }}
         borderRadius="md"
         boxShadow="md"
       >
         <Text
           fontWeight="extrabold"
-          fontSize={{ base: 'lg', md: '2xl' }}
+          fontSize={{ base: 'md', md: '2xl' }}
           color="#1a2236"
           letterSpacing="wide"
           textTransform="uppercase"
@@ -41,7 +41,7 @@ export default function EofyHero() {
         >
           CTR Home | EOFY Sale
         </Text>
-        <Box w={12} h="3px" bg="#1a2236" borderRadius="full" mt={2} />
+        <Box w={{ base: 8, md: 12 }} h="3px" bg="#1a2236" borderRadius="full" mt={2} />
       </Box>
     </Box>
   );
