@@ -46,8 +46,28 @@ export default function HomePage() {
             </MenuButton>
             <ExpandableSofasMenu />
           </Menu>
+          {/* Living Room with Homewares dropdown */}
+          <Menu isLazy>
+            <MenuButton
+              as={Button}
+              variant="ghost"
+              fontWeight="medium"
+              color="gray.700"
+              rightIcon={<ChevronDown size={16} />}
+              _hover={{ bg: 'gray.100' }}
+              _expanded={{ bg: 'gray.100' }}
+              px={0}
+            >
+              Living Room
+            </MenuButton>
+            <MenuList zIndex={20} bg="white" boxShadow="lg" borderRadius="md" py={2}>
+              <MenuItem fontWeight="medium" fontSize="md" _hover={{ bg: 'gray.50' }}>
+                Homewares
+              </MenuItem>
+            </MenuList>
+          </Menu>
           {/* Other nav items */}
-          {['Living Room', 'Dining Room', 'Bedroom', 'Rugs & Accessories'].map((item) => (
+          {["Dining Room", "Bedroom", "Rugs & Accessories"].map((item) => (
             <HStack key={item} gap={1}>
               <Link fontWeight="medium" color="gray.700">
                 {item}
