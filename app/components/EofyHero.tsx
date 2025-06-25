@@ -39,7 +39,7 @@ export default function EofyHero() {
           textTransform="uppercase"
           lineHeight="1.1"
         >
-          CTR Home | EOFY Sale
+          CTR Home | EOFY Sale.
         </Text>
         <Box w={{ base: 8, md: 12 }} h="3px" bg="#1a2236" borderRadius="full" mt={2} />
       </Box>
